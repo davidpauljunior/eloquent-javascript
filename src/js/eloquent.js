@@ -1,5 +1,5 @@
-const module1 = require('./modules/module1');
-const module2 = require('./modules/module2');
+const exerciseBreak = '--- End of exercise ---';
+const loopingTriangle = require('./modules/02-program-structure/looping-triangle');
 
-module1.init();
-module2.init();
+loopingTriangle.init();
+console.log(exerciseBreak);
