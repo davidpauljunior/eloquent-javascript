@@ -1,5 +1,5 @@
 function init() {
-    var result = '';
+    let result = '';
 
     for(var i = 0; i < 7; i++) {
         console.log(result += '#');
