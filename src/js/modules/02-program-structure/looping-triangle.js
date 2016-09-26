@@ -6,4 +6,6 @@ function init() {
     }
 }
 
-module.exports = { init: init };
+module.exports = {
+    init: init
+};
