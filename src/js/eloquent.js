@@ -2,6 +2,8 @@ const exerciseBreak = '--- End of exercise ---';
 const loopingTriangle = require('./modules/02-program-structure/looping-triangle');
 const fizzBuzz = require('./modules/02-program-structure/fizz-buzz');
 const chessBoard = require('./modules/02-program-structure/chess-board');
+const minimum = require('./modules/03-functions/minimum');
+const recursion = require('./modules/03-functions/recursion');
 
 document.addEventListener('readystatechange', function () {
     if (document.readyState === 'complete') {
@@ -12,6 +14,12 @@ document.addEventListener('readystatechange', function () {
         console.log(exerciseBreak);
 
         chessBoard.init();
+        console.log(exerciseBreak);
+
+        minimum.init();
+        console.log(exerciseBreak);
+
+        recursion.init();
         console.log(exerciseBreak);
     }
 });
