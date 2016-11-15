@@ -2,9 +2,12 @@ const exerciseBreak = '--- End of exercise ---';
 const loopingTriangle = require('./modules/02-program-structure/looping-triangle');
 const fizzBuzz = require('./modules/02-program-structure/fizz-buzz');
 const chessBoard = require('./modules/02-program-structure/chess-board');
+
 const minimum = require('./modules/03-functions/minimum');
 const recursion = require('./modules/03-functions/recursion');
 const beanCounting = require('./modules/03-functions/bean-counting');
+
+const sumOfRange = require('./modules/04-data-structures/sum-of-range');
 
 document.addEventListener('readystatechange', function () {
     if (document.readyState === 'complete') {
@@ -24,6 +27,9 @@ document.addEventListener('readystatechange', function () {
         console.log(exerciseBreak);
 
         beanCounting.init();
+        console.log(exerciseBreak);
+
+        sumOfRange.init();
         console.log(exerciseBreak);
     }
 });
