@@ -4,11 +4,18 @@
  * the numbers from start up to (and including) end.
  */
 
-function createRangeArray(start, end) {
+function createRangeArray(start, end, step) {
+    step = step || 1;
     let numberRangeArray = [];
 
-    for(let i = start; i <= end; i++) {
-        numberRangeArray.push(i);
+    if (start >= end) {
+        for (let i = start; i >= end; i += step) {
+            numberRangeArray.push(i);
+        }
+    } else {
+        for(let i = start; i <= end; i += step) {
+            numberRangeArray.push(i);
+        }
     }
 
     console.log(numberRangeArray);
@@ -26,8 +33,8 @@ function createRangeArray(start, end) {
 function getSumOfArray(numberArray) {
     let sum = 0;
 
-    for(let i = 0; i <= numberArray.length; i++) {
-        sum += i;
+    for(let i = 0; i < numberArray.length; i++) {
+        sum += numberArray[i];
     }
 
     console.log(sum);
@@ -43,8 +50,22 @@ function getSumOfArrayUsingReduce(numberArray) {
     console.log(sum);
 }
 
+/**
+ * As a bonus assignment, modify your range function
+ * to take an optional third argument that indicates
+ * the “step” value used to build up the array.
+ * If no step is given, the array elements go up by
+ * increments of one, corresponding to the old behavior.
+ * The function call range(1, 10, 2) should return [1, 3, 5, 7, 9].
+ * Make sure it also works with negative step values so that
+ * range(5, 2, -1) produces [5, 4, 3, 2].
+ *
+ * See modified createRangeArray function above.
+ */
+
 function init() {
-    createRangeArray(1,10);
+    createRangeArray(5,10);
+    createRangeArray(10, 1, -2);
 }
 
 module.exports = {init};
