@@ -9,6 +9,7 @@ const beanCounting = require('./modules/03-functions/bean-counting');
 
 const sumOfRange = require('./modules/04-data-structures/sum-of-range');
 const reversingAnArray = require('./modules/04-data-structures/reversing-an-array');
+const aList = require('./modules/04-data-structures/a-list');
 
 document.addEventListener('readystatechange', function () {
     if (document.readyState === 'complete') {
@@ -34,6 +35,9 @@ document.addEventListener('readystatechange', function () {
         console.log(exerciseBreak);
 
         reversingAnArray.init();
+        console.log(exerciseBreak);
+
+        aList.init();
         console.log(exerciseBreak);
     }
 });
