@@ -65,7 +65,9 @@ function getSumOfArrayUsingReduce(numberArray) {
 
 function init() {
     createRangeArray(5,10);
+    createRangeArray(30, 60, 5);
     createRangeArray(10, 1, -2);
+    createRangeArray(60, 30, -5);
 }
 
 module.exports = {init};
