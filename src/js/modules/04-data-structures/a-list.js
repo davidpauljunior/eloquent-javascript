@@ -21,11 +21,29 @@
  */
 
 function arrayToList(array) {
-    // needs to build data-structure 
+    // needs to build data-structure
+    let list = null;
+
+    // loop through array starting
+    // from the end and working backwards
+
+    // create an object called 'list' with a
+    // property called 'value', and assign
+    // to it the element in the array.
+    // The other property, "rest" will be
+    // assigned the value of the variable 'list'.
+    // As this is a loop, this will become a nested
+    // object with the "value" changing as you
+    // go through the array.
+    for (let i = array.length - 1; i >= 0; i--) {
+        list = { value: array[i], rest: list };
+    }
+
+    return list;
 }
 
 function init() {
-
+    console.log(arrayToList([10, 20]));
 }
 
 module.exports = {init};
