@@ -73,41 +73,37 @@ function prepend(el, list) {
     return arrayToList(array);
 }
 
-// takes a list and a number
+// Takes a list and a number
 // and returns the element at the
 // given position in the list,
 // or undefined where there's no
 // such element.
-function nth(list) {
-    // const array = listToArray(list);
 
-    if (bla) {
-        return bla.value;
-    } else if (blabla) {
-        return null;
+// It goes through the list,
+// if n is 0, it returns the value
+// otherwise it calls the function again
+// with the next nested object (list.rest)
+// and subtracts 1 off of n.
+// So when n gets down to 0,
+// you'll be x levels deep into
+// the nested object, at which points
+// return the value.
+// http://stackoverflow.com/questions/31804231/why-does-this-eloquent-javascript-recursive-solution-work
+function nth(list, number) {
+    if (!list) {
+        return undefined;
+    } else if (number === 0) {
+        return list.value;
     } else {
-        return nth(list);
+        return nth(list.rest, number - 1); // The list.rest being passed is the key to this whole recursion!
     }
-
-    // Basically it checks something,
-    // If x condition does is true it
-    // rmeturns value, otherwise it returns
-    // null, otherwise it calls itself
-    // goes through again.
-    // So what are we looking for?
-    // As you loop through the list,
-    // you want to see if the number passed
-    // in is the stage you're at in the loop,
-    // and if so return the value, otherwise
-    // return null.
-
 }
 
 function init() {
     console.log(arrayToList([10, 20, 30, 40]));
     console.log(listToArray(arrayToList([10, 20, 30, 40]))); // converts array to list and then back again.
     console.log(prepend(10, prepend(20, null)));
-    console.log(nth(arrayToList([10, 20, 30, 40])));
+    console.log(nth(arrayToList([10, 20, 30, 40]), 3));
 }
 
 module.exports = {init};
