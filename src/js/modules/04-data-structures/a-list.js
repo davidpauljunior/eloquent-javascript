@@ -62,15 +62,8 @@ function listToArray(obj) {
  * If you haven’t already, also write a recursive version of nth.
  */
 
-// This needs to take the list, convert
-// it to an array, then add the new element
-// into the array, then convert that into
-// a list.
-function prepend(el, list) {
-    let array = listToArray(list);
-    array.unshift(el);
-
-    return arrayToList(array);
+function prepend(value, list) {
+  return {value: value, rest: list};
 }
 
 // Takes a list and a number
