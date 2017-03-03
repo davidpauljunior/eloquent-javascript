@@ -1,0 +1,1 @@
+mkdir -p dist/css && cleancss ./src/css/eloquent-javascript.css -o ./dist/css/eloquent-javascript.min.css 

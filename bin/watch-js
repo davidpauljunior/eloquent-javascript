@@ -1,4 +1,1 @@
-# -o is mandatory (refers to the output)
-# -v is verbose (shows when file was written and time build took)
-
-watchify ./src/js/eloquent.js -o ./dist/js/eloquent.js -v
+onchange './src/js/**/*.js' -- npm run build-js

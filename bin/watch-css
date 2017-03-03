@@ -1,0 +1,1 @@
+ onchange './src/css/**/*.css' -- npm run build-css
