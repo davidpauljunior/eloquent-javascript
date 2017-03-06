@@ -18,7 +18,8 @@
 function deepEqual(obj, obj2) {
     let objectMatch = true;
 
-    if ((typeof obj != 'object') && (typeof(obj2 != 'object'))) {
+    // Return false if args passed in are not objects or are null
+    if ((obj === null || typeof obj != 'object') && (obj2 === null || typeof(obj2 != 'object'))) {
         return false;
     }
 
@@ -26,32 +27,22 @@ function deepEqual(obj, obj2) {
         return false;
     }
 
-    // Now we know they're the same length,
-    // go over the properties of one, and for each
-    // of them, verify that the other object also has the project.
+    // Now we know they're non null objects of the same length,
+    // go over the properties (keys) of one, and for each
+    // of them, verify that the other object also has the same property.
     for (key in obj) {
         if (!obj2.hasOwnProperty(key)) {
             return false;
         }
 
-        // check here if obj.key is object
-        // yes, it is.
-
-        if (typeof(obj.key) != 'object') {
-            if (obj.key != obj2.key) {
-                return false;
-            }
+        // Call deepEqual again, and if it returns false,
+        // exit this loop too.
+        if (! deepEqual(obj.key, obj2.key)) {
+            return false;
         }
-
-        // key === 'here'
-
-        // obj.key === {is: 'an'}
-
-       objectMatch = deepEqual(obj.key, obj2.key); // false
-
     }
 
-    return objectMatch;
+    return true;
 }
 
 function init() {
@@ -71,4 +62,4 @@ function init() {
     console.log(deepEqual(myObject, myObject2));
 }
 
-module.exports = {init};
+module.exports = { init };
