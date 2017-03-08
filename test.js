@@ -1,11 +1,8 @@
 import test from 'ava';
+import deepComparison from './src/js/modules/04-data-structures/deep-comparison';
 
-test('foo', t => {
-    t.pass();
-});
+test('deep-comparison', t => {
+    deepComparison.init();
 
-test('bar', async t => {
-    const bar = Promise.resolve('bar');
-
-    t.is(await bar, 'bar');
-});
+    t.deepEqual({hello: 'there'}, {hello: 'there'});
+})

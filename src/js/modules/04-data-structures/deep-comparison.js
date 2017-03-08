@@ -11,14 +11,14 @@ function deepEqual(obj, obj2) {
 
     // Early exit 1
     // Checks whether obj and obj2 are null or not 'object'
-    if ((obj === null || typeof(obj) != 'object') && (obj2 === null || typeof(obj2) != 'object')) {
+    if (obj === null || typeof(obj) !== 'object' || obj2 === null || typeof(obj2) !== 'object') {
         console.log('One of both of the arguments passed in to deepEqual were not objects, or were null.')
         return false;
     }
 
     // Early exit 2
     // Checks whether obj and obj2 have the same number of properties
-    if (Object.keys(obj).length != Object.keys(obj2).length) {
+    if (Object.keys(obj).length !== Object.keys(obj2).length) {
         console.log('The objects have a different number of properties');
         return false;
     }
