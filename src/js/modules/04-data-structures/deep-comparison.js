@@ -5,16 +5,6 @@
 // they are the same value or are objects with the same properties whose values
 // are also equal when compared with a recursive call to deepEqual.
 
-// function objectLength(obj) {
-//     let length = 0;
-//     for (key in obj) {
-//         if(obj.hasOwnProperty(key)) {
-//             length ++;
-//         }
-//     }
-//     return length;
-// }
-
 function deepEqual(obj, obj2) {
 
     // Early exit 1
@@ -41,13 +31,21 @@ function deepEqual(obj, obj2) {
             return false;
         }
 
-        console.log(Object.keys(obj[prop]));
+        // console.log(obj[prop]); // returns string because the key is a string, e.g. 'hello', 'object'
+        // console.log(obj2[prop]);
 
-        // Now call deepEqual again and passthrough the value
+        // Call deepEqual again and passthrough the looped through properies (actually gives values)
         // If that returns false, return this loop false.
-        // console.log(obj2.key);
-        // if (! deepEqual(obj.key, obj2.key)) {
-
+        // console.log(obj2[prop]);
+        console.log(obj[prop]);
+        console.log(typeof(obj[prop]));
+        console.log(deepEqual(obj[prop], obj2[prop]));
+        // if (!deepEqual(obj[prop], obj2[prop])) {
+        //     // console.log(
+        //     //     typeof(obj[prop]), // returns string, need obj.
+        //     //     typeof(obj2[prop]) // returns undefined
+        //     // );
+        //     return false;
         // }
     }
     return true;
@@ -55,16 +53,16 @@ function deepEqual(obj, obj2) {
 
 function init() {
     const myObject = {
-        here: {
-            is: 'an'
+        objFirst: {
+            objFirstSub: 'obj-child-object'
         },
-        object: 2
+        objSecond: 2
     };
 
     const myObject2 = {
-        here: 'an',
-        object: 2,
-        key: 3
+        obj2First: 'obj2 string',
+        obj2Second: 3,
+        obj2Third: 4
     };
 
     console.log(deepEqual(myObject, myObject));
