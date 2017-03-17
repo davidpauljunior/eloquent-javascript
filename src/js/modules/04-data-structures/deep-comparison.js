@@ -12,7 +12,7 @@ function deepEqual(obj, obj2) {
     // Early exit 1
     // Checks whether obj and obj2 are null or not 'object'
     if (obj === null || typeof(obj) !== 'object' || obj2 === null || typeof(obj2) !== 'object') {
-        console.log('One of both of the arguments passed in to deepEqual were not objects, or were null.')
+        console.log('One or both of the arguments passed in to deepEqual were not objects, or were null.')
         return false;
     }
 
@@ -53,33 +53,35 @@ function deepEqual(obj, obj2) {
     return objectMatch;
 }
 
-function init() {
-    const simpleObject = {
-        key: 1,
-        key: 2
-    };
+// function init() {
+//     const simpleObject = {
+//         key: 1,
+//         key: 2
+//     };
 
-    const simpleObject2 = {
-        key1: 1,
-        key2: 2
-    };
+//     const simpleObject2 = {
+//         key1: 1,
+//         key2: 2
+//     };
 
-    const complexObject = {
-        objFirst: {
-            objFirstSub: 'obj-child-object'
-        },
-        objSecond: 2
-    };
+//     const complexObject = {
+//         objFirst: {
+//             objFirstSub: 'obj-child-object'
+//         },
+//         objSecond: 2
+//     };
 
-    const complexObject2 = {
-        obj2First: 'obj2 string',
-        obj2Second: 3
-    };
+//     const complexObject2 = {
+//         obj2First: 'obj2 string',
+//         obj2Second: 3
+//     };
 
-    console.log(deepEqual(simpleObject, simpleObject));
-    console.log(deepEqual(simpleObject, simpleObject2));
-    console.log(deepEqual(complexObject, complexObject));
-    console.log(deepEqual(complexObject, complexObject2));
-}
+//     console.log(deepEqual(simpleObject, simpleObject));
+//     console.log(deepEqual(simpleObject, simpleObject2));
+//     console.log(deepEqual(complexObject, complexObject));
+//     console.log(deepEqual(complexObject, complexObject2));
+// }
 
-module.exports = { init };
+module.exports = { 
+    init: deepEqual 
+};

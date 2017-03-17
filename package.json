@@ -8,7 +8,7 @@
     "build-js": "./bin/build-js",
     "watch-js": "./bin/watch-js",
     "watch-css": "./bin/watch-css",
-    "test": "ava"
+    "test": "ava --verbose"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,10 @@
     "clean-css-cli": "^4.0.8",
     "onchange": "^3.2.1",
     "watchify": "^3.7.0"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ]
   }
 }
