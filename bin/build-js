@@ -1,4 +1,0 @@
-# Make a directory if it doesn't already exist (-p)
-# -o is the output
-
-mkdir -p dist/js && browserify ./src/js/eloquent.js -o ./dist/js/eloquent.js -t babelify --presets es2015

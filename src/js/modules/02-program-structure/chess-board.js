@@ -1,6 +1,6 @@
 /**
- * Create an 8x8 grid that alternatives
- * ' ' and '#'.  E.g.
+ * Create an 8x8 grid that alternates ' ' and '#'.
+ * E.g.
  *  # # # #
  * # # # #
  *  # # # #

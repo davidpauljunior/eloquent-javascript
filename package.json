@@ -4,10 +4,11 @@
   "description": "Tasks in Eloquent JavaScript book",
   "main": "eloquent.js",
   "scripts": {
-    "build-css": "./bin/build-css",
-    "build-js": "./bin/build-js",
-    "watch-js": "./bin/watch-js",
-    "watch-css": "./bin/watch-css",
+    "build:css": "mkdir -p dist/css && cleancss ./src/css/eloquent-javascript.css -o ./dist/css/eloquent-javascript.min.css",
+    "build:js": "mkdir -p dist/js && browserify ./src/js/eloquent.js -o ./dist/js/eloquent.js -t babelify --presets es2015",
+    "watch:js": "onchange './src/js/**/*.js' -- npm run build:js",
+    "watch:css": "onchange './src/css/**/*.css' -- npm run build:css",
+    "watch": "npm run watch:js & npm run watch:css",
     "test": "ava --verbose"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "browserify": "^13.1.0",
     "clean-css-cli": "^4.0.8",
     "onchange": "^3.2.1",
+    "sinon": "^2.1.0",
     "watchify": "^3.7.0"
   },
   "ava": {
