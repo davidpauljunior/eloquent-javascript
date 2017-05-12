@@ -1,6 +1,6 @@
 const deepComparison = require('../../src/js/modules/04-data-structures/deep-comparison');
 
-test('compare non object and object arguments', () => {
+test('Should return false when comparing non object and object arguments', () => {
     const init = deepComparison.init(
         4,
         {good: 'morning'}
@@ -8,7 +8,7 @@ test('compare non object and object arguments', () => {
     expect(init).toBe(false);
 });
 
-test('compare two simple matching objects', () => {
+test('Should return true when comparing two simple matching objects', () => {
     const init = deepComparison.init(
         {good: 'morning'},
         {good: 'morning'}
@@ -16,7 +16,7 @@ test('compare two simple matching objects', () => {
     expect(init).toBe(true);
 });
 
-test('compare two simple mismatching objects', () => {
+test('Should return false when comparing two simple mismatching objects', () => {
     const init = deepComparison.init(
         {good: 'morning'},
         {good: 'afternoon'}
@@ -24,7 +24,7 @@ test('compare two simple mismatching objects', () => {
     expect(init).toBe(false);
 });
 
-test('compare two nested matching objects', () => {
+test('Should return true when comparing two nested matching objects', () => {
     const init = deepComparison.init(
         {
             good: 'morning',
@@ -38,7 +38,7 @@ test('compare two nested matching objects', () => {
     expect(init).toBe(true);
 });
 
-test('compare two nested mismatching objects', () => {
+test('Should return false when comparing two nested mismatching objects', () => {
     const init = deepComparison.init(
         {
             good: 'morning',
