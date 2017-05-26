@@ -8,7 +8,7 @@
     "build:js": "mkdir -p dist/js && browserify ./src/js/eloquent.js -o ./dist/js/eloquent.js -t babelify --presets es2015",
     "watch:js": "onchange './src/js/**/*.js' -- npm run build:js",
     "watch:css": "onchange './src/css/**/*.css' -- npm run build:css",
-    "dev": "npm run build:css && npm run build:js && npm run watch:js & npm run watch:css",
+    "dev": "npm run build:css & npm run build:js && npm run watch:js & npm run watch:css",
     "test": "jest"
   },
   "repository": {
@@ -29,12 +29,6 @@
     "clean-css-cli": "^4.0.8",
     "jest": "^20.0.1",
     "onchange": "^3.2.1",
-    "sinon": "^2.1.0",
     "watchify": "^3.7.0"
-  },
-  "ava": {
-    "files": [
-      "test/**/*.js"
-    ]
   }
 }
