@@ -19,7 +19,10 @@ function deepEqual(obj, obj2) {
     // Early exit 2
     // Checks whether obj and obj2 have the same number of properties
     if (Object.keys(obj).length !== Object.keys(obj2).length) {
-        console.log('The objects have a different number of properties');
+        console.log('The objects have a different number of properties', 
+            Object.keys(obj), 
+            Object.keys(obj2)
+        );
         return false;
     }
 
