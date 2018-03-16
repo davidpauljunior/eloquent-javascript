@@ -14,18 +14,19 @@ function init() {
             console.log(i);
         }
 
-        // Another way
-        let msg = '';
+        // An alternative approach
 
-        if(fizz) {
-            msg += 'Fizz'
-        }
+        // let msg = '';
 
-        if(buzz) {
-            msg += 'Buzz'
-        }
+        // if(fizz) {
+        //     msg += 'Fizz'
+        // }
 
-        console.log(msg || i);
+        // if(buzz) {
+        //     msg += 'Buzz'
+        // }
+
+        // console.log(msg || i);
     }
 }
 

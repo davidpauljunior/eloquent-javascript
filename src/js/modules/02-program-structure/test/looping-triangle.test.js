@@ -1,4 +1,4 @@
-const loopingTriangle = require('../../src/js/modules/02-program-structure/looping-triangle');
+const loopingTriangle = require('../looping-triangle');
 
 test('should create a triangle of # symobls in the console', () => {
     const spy = jest.spyOn(console, 'log'); // Mocked function

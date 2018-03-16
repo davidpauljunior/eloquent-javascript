@@ -29,7 +29,7 @@ document.addEventListener('readystatechange', function () {
         recursion.init();
         console.log(exerciseBreak);
 
-        beanCounting.init();
+        beanCounting.init('kakkerlak', 'k');
         console.log(exerciseBreak);
 
         sumOfRange.init();

@@ -1,4 +1,4 @@
-const deepComparison = require('../../src/js/modules/04-data-structures/deep-comparison');
+const deepComparison = require('../deep-comparison');
 
 test('Should return false when comparing non object and object arguments', () => {
     const init = deepComparison.init(

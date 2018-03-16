@@ -10,23 +10,20 @@
  * use of this new function.
  */
 
- function countBs(string) {
-     return countChar(string, "B");
- }
+// function countBs(string) {
+//     return countChar(string, "B");
+// }
 
- function countChar(string, char) {
-     let count = 0;
-     for(let i = 0; i < string.length; i++) {
-         if(string.charAt(i) === char) {
-             count ++;
-         }
-     }
-     return count;
- }
+function countChar(string, char) {
+    let count = 0;
+    for(let i = 0; i < string.length; i++) {
+        if(string.charAt(i) === char) {
+            count ++;
+        }
+    }
+    console.log(count);
+}
 
- function init() {
-     console.log(countBs("BBC"));
-     console.log(countChar("kakkerlak", "k"));
- }
-
- module.exports = {init};
+module.exports = {
+    init: countChar
+};

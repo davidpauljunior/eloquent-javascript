@@ -15,6 +15,7 @@ function init() {
     const gridSize = 8;
     let counter = '';
 
+    // Two loops, outer one to create the rows, inner to create the columns
     for(let i = 0; i < gridSize; i++) {
         for(let j = 0; j < gridSize; j++) {
             // % checks whether there's a remainder
@@ -26,7 +27,7 @@ function init() {
                 counter += '#';
             }
         }
-        counter += '\n';
+        counter += '\n'; // Output a new line
     }
 
     console.log(counter);
